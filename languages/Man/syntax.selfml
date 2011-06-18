@@ -1,0 +1,13 @@
+(root text.man
+    (zone markup.heading.man
+        (match
+            (regex [^[A-Z](?:(?:\S+\s\S+)+|\S+)$])))
+    (zone markup.underline.link.man
+        (match
+            (regex [((https?|ftp|file|txmt)://|mailto:)[-:@a-zA-Z0-9_.~%+/?=&#]+(?<![.?:])])))
+    (zone markup.underline.link.internal.man
+        (match
+            (regex [([\w\.]+\(\d[a-z]?\))])))
+    (zone meta.foldingStopMarker.man
+        (match [_{2,}]
+            (anchor.both))))

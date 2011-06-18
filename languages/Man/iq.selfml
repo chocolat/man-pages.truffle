@@ -1,0 +1,13 @@
+(detector
+    (extension man))
+
+(folding
+    (start [^[A-Z](?:(?:\S+\s\S+)+|\S+)$])
+    (stop [^_{2,}$]))
+
+(in markup.heading.man
+    (symbol-list
+        (transformation [
+	s/([\w\-])([\w-]*)/$1\L$2\E/g;
+	s/(\s)\b(The|A|An|And|To|Of|In|By)\b/$1\L$2\E/g;
+	])))

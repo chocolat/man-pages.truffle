@@ -1,0 +1,18 @@
+(trigger
+    (key [[cancel]]))
+
+(name [Visit Man Page])
+
+(only-in markup.underline.link.internal.man)
+
+(input selection scope)
+
+(output tooltip)
+
+(save nothing)
+
+(script [# Place a symlink to "$TM_BUNDLE_SUPPORT/mman" somewhere in your path
+# and then you can bring up man pages in TextMate via the terminal
+# using "mman <manpage>"
+
+"$TM_BUNDLE_SUPPORT/mman"])
