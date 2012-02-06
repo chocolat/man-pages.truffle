@@ -2,8 +2,10 @@
     (extension man))
 
 (folding
-    (start [^[A-Z](?:(?:\S+\s\S+)+|\S+)$])
+    (start [^[A-Z](?>\S|\s(?!\s))*$])
     (stop [^_{2,}$]))
+
+(no-spellchecking)
 
 (in markup.heading.man
     (symbol-list
